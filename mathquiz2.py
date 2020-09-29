@@ -66,8 +66,7 @@ class Quiz:
         time_elapsed = (self.end_time-self.start_time).seconds
         print(f'You got {self.total_correct()}/{len(self.questions)} questions right')
         print(f'It took you {time_elapsed} seconds total')
-        if self.total_correct() == self.questions:
-            self.times.append(None)
+        self.times.append(time_elapsed)
     
     def display_stats(self):
         i = 0
