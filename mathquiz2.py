@@ -1,7 +1,7 @@
 import datetime
 import random
 
-from mathapp1 import Add, Multiply, Divide, Substract
+from mathquiz1 import Add, Multiply, Divide, Substract
 
 class Quiz:
 
@@ -66,7 +66,8 @@ class Quiz:
         time_elapsed = (self.end_time-self.start_time).seconds
         print(f'You got {self.total_correct()}/{len(self.questions)} questions right')
         print(f'It took you {time_elapsed} seconds total')
-        self.times.append(time_elapsed)
+        if self.total_correct() == self.questions:
+            self.times.append(None)
     
     def display_stats(self):
         i = 0
